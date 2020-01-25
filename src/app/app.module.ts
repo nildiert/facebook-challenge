@@ -17,6 +17,7 @@ import { HeaderWallComponent } from './header-wall/header-wall.component';
 import { WallSidenavComponent } from './wall-sidenav/wall-sidenav.component';
 import { WallCenterComponent } from './wall-center/wall-center.component';
 import { WallChatComponent } from './wall-chat/wall-chat.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { WallChatComponent } from './wall-chat/wall-chat.component';
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

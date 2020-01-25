@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
 
 html {
-    font-family: 'Source Sans Pro', sans-serif;
-    background: #F0F2F5;
+  font-family: 'Source Sans Pro', sans-serif;
+  background: #F0F2F5;
+  margin: 0;
 }
 
 body {
-    margin: 0;
-    background: #F0F2F5;
+  margin: 0;
+  padding: 0;
+  background: #F0F2F5;
 }

@@ -1,0 +1,85 @@
+
+.chat {
+  width: 25%;
+  display: flex;
+  flex-flow: column;
+  background: #F0F2F5;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat--main {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+}
+
+.chat--main h2 {
+  font-size: 16px;
+  color: #706f6f;
+}
+
+.chat--main-hb {
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 15px;
+  border-bottom: solid 1px rgb(199, 199, 199);
+}
+
+.chat--main-hb img {
+  width: 30px;
+  width: 30px;
+}
+
+.chat--main-hb span {
+  align-self: center;
+  font-size: 14px;
+  color: #706f6f;
+  margin-left: 10px;
+
+}
+
+.chat--main-hb span strong {
+  color: black;
+}
+
+
+.chat__header {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 30px;
+}
+
+.chat__header h3 {
+  color: #706f6f;
+  font-size: 15px;
+}
+.chat__header img {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-self: center;
+}
+
+.chat__list {
+  display: flex;
+  flex-direction: column;
+  margin: 0 30px;
+}
+
+.chat__list--item {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.chat__list--item > img {
+  border-radius: 50px;
+  width: 30px;
+}
+
+.chat__list--item span {
+  display: flex;
+  align-self: center;
+  margin-left: 10px;
+  font-size: 14px;
+}

@@ -32,7 +32,7 @@ login( email: string, password: string ) {
     .then(userCredential => {
       if (userCredential) {
 
-        this.router.navigate(['/home']);
+        this.router.navigate(['/wall']);
       }
     });
 }
@@ -46,7 +46,7 @@ login( email: string, password: string ) {
         userCredential.user.updateProfile( {
           displayName: user.firstName + ' ' + user.lastName
         });
-        this.router.navigate(['/home']);
+        this.router.navigate(['/wall']);
         // this.insertUserData(userCredential)
         //   .then(() => {
         //     console.log("Llego hasta aqui 2");

@@ -11,25 +11,17 @@ import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment';
 import { RegistrationComponent } from './auth/registration/registration.component';
 import { LoginComponent } from './auth/login/login.component';
-import { HomeComponent } from './home/home.component';
-import { WallComponent } from './wall/wall.component';
-import { HeaderWallComponent } from './header-wall/header-wall.component';
-import { WallSidenavComponent } from './wall-sidenav/wall-sidenav.component';
-import { WallCenterComponent } from './wall-center/wall-center.component';
-import { WallChatComponent } from './wall-chat/wall-chat.component';
+import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { WallTModule } from './modules/wall-t/wall-t.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
     LoginComponent,
-    HomeComponent,
-    WallComponent,
-    HeaderWallComponent,
-    WallSidenavComponent,
-    WallCenterComponent,
-    WallChatComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +30,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    WallTModule
   ],
   providers: [],
   bootstrap: [AppComponent]

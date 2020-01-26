@@ -2,8 +2,10 @@ import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { RegistrationComponent } from './auth/registration/registration.component';
-import { HomeComponent } from './home/home.component';
-import { WallComponent } from './wall/wall.component';
+import { HomeComponent } from './components/home/home.component';
+import { HeaderWallComponent } from './modules/wall-t/header-wall/header-wall.component';
+import { WallSidenavComponent } from './modules/wall-t/wall-sidenav/wall-sidenav.component';
+import { WallChatComponent } from './modules/wall-t/wall-chat/wall-chat.component';
 
 
 const routes: Routes = [
@@ -21,7 +23,7 @@ const routes: Routes = [
   },
   {
     path: 'wall',
-    component: WallComponent
+    loadChildren: () => import('./modules/wall-t/wall-t.module').then(({ WallTModule }) => WallTModule)
   },
   {
     path: '',
@@ -31,7 +33,6 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes),],
 })
 export class AppRoutingModule { }

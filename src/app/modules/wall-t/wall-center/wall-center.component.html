@@ -1,110 +1,103 @@
 <section class="wall column">
   <div class="wall__container">
-      <div class="wall__my-post">
-          <div class="wall__my-post--content">
-              <img src="../../assets/img/profile_pic.jpg" class="wall__my-post--content--pic" alt="">
-              <div class="wall__my-post--content--button" (click)="openDialog()">
-                  ¿Qué estás pensando, Nildiert?
-              </div>
-          </div>
-          <div class="wall__my-post--footer">
-              <div class="wall__my-post--footer-item">
-                  <img src="../../assets/img/wall-img.png" alt="">
-                  <span>
-                      Foto/video
-                  </span>
-              </div>
-              <div class="wall__my-post--footer-item">
-                  <img src="../../assets/img/wall-tag.png" alt="">
-                  <span>
-                      Etiquetar amigos
-                  </span>
-              </div>
-              <div class="wall__my-post--footer-item">
-                  <img src="../../assets/img/wall-feel.png" alt="">
-                  <span>
-                      Sentimiento/actividad
-                  </span>
-              </div>
-          </div>
+    <div class="wall__my-post">
+      <div class="wall__my-post--content">
+        <img
+          src="../../assets/img/profile_pic.jpg"
+          class="wall__my-post--content--pic"
+          alt=""
+        />
+        <div class="wall__my-post--content--button" (click)="openDialog()">
+          ¿Qué estás pensando, Nildiert?
+        </div>
+      </div>
+      <div class="wall__my-post--footer">
+        <div class="wall__my-post--footer-item">
+          <img src="../../assets/img/wall-img.png" alt="" />
+          <span>
+            Foto/video
+          </span>
+        </div>
+        <div class="wall__my-post--footer-item">
+          <img src="../../assets/img/wall-tag.png" alt="" />
+          <span>
+            Etiquetar amigos
+          </span>
+        </div>
+        <div class="wall__my-post--footer-item">
+          <img src="../../assets/img/wall-feel.png" alt="" />
+          <span>
+            Sentimiento/actividad
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="wall__post" *ngFor="let post of posts">
+      <div class="wall__post--header">
+        <img src="../../assets/img/profile_pic.jpg" class="" alt="" />
+        <div class="wall__post--header--publisher">
+          <a href="">Nildiert Jimenez</a>
+          <span>{{ getCreationTime(post.creationDate?.toDate()) }}</span>
+        </div>
+
+        <div class="wall__post--header--more">
+          <button
+            mat-icon-button
+            [matMenuTriggerFor]="menu"
+            aria-label="Example icon-button with a menu"
+          >
+            <mat-icon>more_horiz</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              <span>Editar</span>
+            </button>
+            <button mat-menu-item disabled>
+              <span>Eliminar</span>
+            </button>
+          </mat-menu>
+        </div>
+      </div>
+      <div class="wall__post--text">
+        {{ post.text }}
       </div>
 
-      <div class="wall__post">
-          <div class="wall__post--header">
-              <img src="../../assets/img/profile_pic.jpg" class="" alt="">
-              <div class="wall__post--header--publisher">
-                  <a href="">Nildiert Jimenez</a>
-                  <span>9 min</span>
-              </div>
-              <div class="wall__post--header--more">
-                  <img src="../../assets/img/more.png" alt="">
-              </div>
-          </div>
-          <div class="wall__post--text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore at omnis dignissimos qui ex in
-              repudiandae quos! Maiores eaque voluptate quibusdam corrupti, iste accusamus debitis repellendus
-              amet, vitae, eum illum.
-              Totam harum suscipit facere laborum accusamus adipisci, mollitia voluptates ipsa laboriosam aut
-              temporibus commodi repellendus tenetur quae iusto, dolor dolore pariatur, quam facilis
-              exercitationem incidunt dicta odit accusantium. Dicta, modi.
-              Recusandae enim dolore expedita totam, ab obcaecati quae impedit deleniti ipsa hic beatae.
-              Perspiciatis, vel unde voluptas voluptatibus dolore aliquam eius suscipit amet tempore, numquam
-              sit labore, nostrum facere harum.
-              Similique magni eligendi doloremque unde soluta porro sequi temporibus. Officiis aspernatur
-              reiciendis animi similique nihil commodi, eos obcaecati a velit minima, est dolor id eaque
-              fugiat dicta maxime tenetur enim.
-              Nemo totam, minima expedita aspernatur ratione id officia neque enim eligendi omnis excepturi,
-              adipisci, blanditiis facere soluta velit optio debitis voluptatibus? Beatae necessitatibus
-              numquam, hic maxime facilis odio eum magnam.
-              Exercitationem possimus neque consectetur a aliquid ipsa inventore voluptatem quia magnam ullam
-              fugit voluptates quos culpa totam illo repellendus laborum maxime, dolores quas optio. Deleniti
-              at voluptas fugiat quae sapiente.
-              Vel cum illum voluptatibus sed. Commodi soluta eum dolores rem molestiae adipisci cum omnis!
-              Possimus, reiciendis? Eaque non, vel vitae omnis aspernatur laudantium corporis maxime quae
-              asperiores cumque, sapiente eos.
-              Nesciunt sint vitae soluta error facilis tempore id numquam repellendus vero porro esse eum
-              temporibus possimus doloribus molestias, explicabo ab, cum dolor, consectetur inventore! Quae
-              architecto magnam sapiente reprehenderit debitis!
-              Minus consequatur ipsam ab suscipit voluptatibus distinctio dolores corporis magnam quidem eos!
-              Molestiae pariatur labore velit sit neque perspiciatis officia eum alias quod fuga possimus
-              dolorem at assumenda, voluptate aut?
-              Magnam cupiditate aspernatur facere tenetur voluptatum placeat aperiam quis voluptate
-              accusantium laboriosam ad recusandae eligendi amet alias architecto nulla, ipsa dignissimos.
-              Repudiandae quas consectetur est possimus iure similique magni veritatis.
-          </div>
-          <div class="wall__post--img"></div>
-          <div class="wall__post--buttons">
-              <button>Me gusta</button>
-              <button>Comentar</button>
-              <button>Compartir</button>
-          </div>
+      <ng-container>
+        <div *ngIf="post.img" class="wall__post--img"></div>
+      </ng-container>
+      <div class="wall__post--buttons">
+        <button>Me gusta</button>
+        <button>Comentar</button>
+        <button>Compartir</button>
       </div>
+    </div>
 
-      <div class="wall__post">
-          <div class="wall__post--header">
-              <img src="../../assets/img/profile_pic.jpg" class="" alt="">
-              <div class="wall__post--header--publisher">
-                  <a href="">Nildiert Jimenez</a>
-                  <span>9 min</span>
-              </div>
-              <div class="wall__post--header--more">
-                  <img src="../../assets/img/more.png" alt="">
-              </div>
-          </div>
-          <div class="wall__post--text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore at omnis dignissimos qui ex in
-              repudiandae quos! Maiores eaque voluptate quibusdam corrupti, iste accusamus debitis repellendus
-
-              amet, vitae, eum illum.
-          </div>
-          <div class="wall__post--img">
-              <img src="../../assets/img/test-img.jpg" alt="">
-          </div>
-          <div class="wall__post--buttons">
-              <button>Me gusta</button>
-              <button>Comentar</button>
-              <button>Compartir</button>
-          </div>
+    <div class="wall__post">
+      <div class="wall__post--header">
+        <img src="../../assets/img/profile_pic.jpg" class="" alt="" />
+        <div class="wall__post--header--publisher">
+          <a href="">Nildiert Jimenez</a>
+          <span>9 min</span>
+        </div>
+        <div class="wall__post--header--more">
+          <img src="../../assets/img/more.png" alt="" />
+        </div>
       </div>
+      <div class="wall__post--text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore at
+        omnis dignissimos qui ex in repudiandae quos! Maiores eaque voluptate
+        quibusdam corrupti, iste accusamus debitis repellendus amet, vitae, eum
+        illum.
+      </div>
+      <div class="wall__post--img">
+        <img src="../../assets/img/test-img.jpg" alt="" />
+      </div>
+      <div class="wall__post--buttons">
+        <button>Me gusta</button>
+        <button>Comentar</button>
+        <button>Compartir</button>
+      </div>
+    </div>
   </div>
 </section>

@@ -7,7 +7,7 @@ export const environment = {
   firebase: {
     apiKey: 'AIzaSyAt8gomIKlwlQcYEQe6FCtMWdOfjPk6hVI',
     authDomain: 'project-700155341297',
-    databaseURL: '<your-database-URL>',
+    databaseURL: 'https://facebook-laboratoria.firebaseio.com',
     projectId: 'facebook-laboratoria',
     storageBucket: '<your-storage-bucket>',
     messagingSenderId: '<your-messaging-sender-id>'

@@ -18,13 +18,13 @@
     <div class="login-section__box">
       <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
 
-        <input ngModel #email="ngModel" name="email" type="email">
+        <input ngModel #email="ngModel" name="email" type="email" placeholder="Correo electronico">
 
-        <input ngModel #password="ngModel" name="password" type="password">
+        <input ngModel #password="ngModel" name="password" type="password" placeholder="Contraseña">
 
         <button class="btn btn-primary" type="submit">Login</button>
 
-        <span><a href="">Olvidaste tu cuenta?</a> </span>
+        <span ><a href="#" class="forget-password">Olvidaste tu cuenta?</a> </span>
       </form>
 
     </div>

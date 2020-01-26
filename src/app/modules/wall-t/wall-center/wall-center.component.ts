@@ -17,7 +17,7 @@ export interface DialogData {
 })
 export class WallCenterComponent implements OnInit {
   name: string;
-  animal: string;
+  dialog: string;
   matMenu: any;
 
   posts: Post[] = [];
@@ -49,7 +49,7 @@ export class WallCenterComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      this.animal = result;
+      this.dialog = result;
     });
   }
 

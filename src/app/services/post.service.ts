@@ -21,7 +21,6 @@ export class PostService {
   }
 
   updatePost(post: Post) {
-    delete post.id;
     this.firestore.doc('posts/' + post.id).update(post);
   }
 

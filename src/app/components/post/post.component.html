@@ -1,21 +1,17 @@
-<h1 mat-dialog-title>Hi {{ data.name }}</h1>
+<h1 mat-dialog-title>{{ title }}</h1>
 <div mat-dialog-content>
   <div>
     <textarea
       style="width: 100%;"
       (change)="text = $event.target.value"
-      placeholder="Leave a comment"
+      placeholder="¿Qué estás pensando?"
+      [value]="text"
     ></textarea>
   </div>
 </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button
-    mat-button
-    [mat-dialog-close]="data.animal"
-    (click)="save()"
-    cdkFocusInitial
-  >
-    Ok
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-button (click)="save()" cdkFocusInitial>
+    {{ isNew ? 'Publicar' : 'Actualizar' }}
   </button>
 </div>

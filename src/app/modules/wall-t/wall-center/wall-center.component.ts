@@ -6,8 +6,8 @@ import { Post } from 'src/app/models/post.model';
 import { DatePipe } from '@angular/common';
 
 export interface DialogData {
-  animal: string;
-  name: string;
+  isNew: boolean;
+  post: Post;
 }
 
 @Component({
@@ -24,10 +24,28 @@ export class WallCenterComponent implements OnInit {
   constructor(public dialog: MatDialog, private postService: PostService) {}
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(PostComponent, {
-      width: '400px',
-      data: { name: this.name, animal: this.animal }
+    const dialogRef = this.dialog.open<PostComponent, DialogData>(
+      PostComponent,
+      {
+        width: '400px',
+        data: { isNew: true, post: { text: '' } }
+      }
+    );
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.animal = result;
     });
+  }
+
+  openDialogEdit(post: Post): void {
+    const dialogRef = this.dialog.open<PostComponent, DialogData>(
+      PostComponent,
+      {
+        width: '400px',
+        data: { isNew: false, post }
+      }
+    );
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
@@ -46,14 +64,15 @@ export class WallCenterComponent implements OnInit {
           (a, b) =>
             a.creationDate &&
             b.creationDate &&
+            !(b.creationDate instanceof Date) &&
+            !(a.creationDate instanceof Date) &&
             b.creationDate.toDate().getTime() -
-             a.creationDate.toDate().getTime()
+              a.creationDate.toDate().getTime()
         );
-      console.log(this.posts);
     });
   }
 
-  getCreationTime(date?: Date) {
+  getCreationTime(date?: any) {
     if (date) {
       let diffMs = Date.now() - date.getTime();
 

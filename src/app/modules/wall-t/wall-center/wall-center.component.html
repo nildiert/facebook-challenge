@@ -50,10 +50,10 @@
             <mat-icon>more_horiz</mat-icon>
           </button>
           <mat-menu #menu="matMenu">
-            <button mat-menu-item>
+            <button mat-menu-item (click)="openDialogEdit(post)">
               <span>Editar</span>
             </button>
-            <button mat-menu-item disabled>
+            <button mat-menu-item>
               <span>Eliminar</span>
             </button>
           </mat-menu>

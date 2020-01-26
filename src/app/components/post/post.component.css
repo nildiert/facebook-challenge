@@ -1,0 +1,6 @@
+textarea {
+  border-radius: 5px;
+  height: 40px;
+  border: 1px orange;
+  background-color: rgb(245, 244, 244);
+}
